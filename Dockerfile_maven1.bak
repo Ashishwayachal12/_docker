@@ -1,0 +1,12 @@
+FROM ubuntu
+
+WORKDIR /app
+
+COPY maven_1.sh .
+
+RUN apt update &&  apt install openjdk-21-jdk -y
+RUN apt install maven -y
+RUN apt install git -y  
+RUN chmod 765 maven_1.sh
+CMD ["./maven_1.sh"]
+
